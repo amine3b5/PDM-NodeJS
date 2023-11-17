@@ -45,10 +45,6 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
 
     },
 
-    role:{
-        type: String,
-    }
-
 
   
   
