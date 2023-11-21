@@ -1,13 +1,11 @@
 //import
-import express, { urlencoded } from 'express';
+import express from 'express';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 // import cors from 'cors';
 import { notFoundError } from './middlewares/error-handler.js';
 
 import  userRoutes from './routes/user.js'
-import  adminRoutes from './routes/admin.js'
-
 
 
 
@@ -37,7 +35,7 @@ mongoose
 
 
 app.use('/user', userRoutes)
-app.use('/admin', adminRoutes)
+//app.use('/admin', adminRoutes)
 app.use(notFoundError)
 
 

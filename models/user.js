@@ -5,33 +5,39 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
 //  bech  nda5el les variables eli  fel  diagramme 
     email: {
     type: String,
+    required: true
     //
     },
 
    first_name: {
         type: String,
+        required: true
       //  
     },
 
     last_name: {
         type: String,
+        required: true
       //  
     },
    
     phone: {
         type: Number,
+        required: true
       //  
 
     },
 
     password: {
         type: String,
+        required: true
       //  
 
     },
 
     image:{
         type:String,
+        required: true
         
     },
     wallet: {
@@ -41,6 +47,7 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
     },
     adresse: {
         type: String,
+        required: true
         
 
     },

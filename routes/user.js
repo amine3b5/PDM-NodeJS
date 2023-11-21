@@ -25,7 +25,22 @@ router.route("/:id")
    .put(multer("image"),user.updateuser)
    .delete(user.deleteuser);
 
-  // router.route("/:id")
-   // .patch(user.updateuser)
+ /*  //Handlers from controllers
 
+
+router.post('/login', login)
+router.post('/signup', signup)
+router.post('/send-otp', sendOTP)
+
+
+//testing protected route
+router.get("/test",auth, (req,res)=>{
+    res.json({
+        success: true,
+        message: "You are a valid Tester "
+    })
+})
+
+
+*/
     export default router;
