@@ -1,36 +1,19 @@
 import express, { Router } from 'express';
 import * as user   from '../controllers/user.js';
-<<<<<<< Updated upstream
+
 //import multer from "../middlewares/multer-config.js";
 import { body } from 'express-validator';
 import multer from 'multer';
 
-=======
 import { adduser } from '../controllers/user.js';
->>>>>>> Stashed changes
+
 
 
 const router = express.Router();
 
 router.route("/")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    .post( multer("image"),
-=======
-    .post( 
->>>>>>> Stashed changes
-    body("wallet").isNumeric(),
-    body("adresse").isLength({min:5,max:100}),
-    body("password").isLength({min:5,max:10}),
-    body("last_name").isLength({min:5,max:10}),
-    body("first_name").isLength({min:5,max:10}),
-    body("email").isEmail(),
-    body("phone").isLength({min:8,max:8}),
-    user.adduser);
-=======
     .post( adduser ),
 
->>>>>>> Stashed changes
 
 router.route("/:user")
 .get(user.getuser);
