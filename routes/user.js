@@ -1,14 +1,19 @@
 import express, { Router } from 'express';
 import * as user   from '../controllers/user.js';
+<<<<<<< Updated upstream
 //import multer from "../middlewares/multer-config.js";
 import { body } from 'express-validator';
 import multer from 'multer';
 
+=======
+import { adduser } from '../controllers/user.js';
+>>>>>>> Stashed changes
 
 
 const router = express.Router();
 
 router.route("/")
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     .post( multer("image"),
 =======
@@ -22,6 +27,10 @@ router.route("/")
     body("email").isEmail(),
     body("phone").isLength({min:8,max:8}),
     user.adduser);
+=======
+    .post( adduser ),
+
+>>>>>>> Stashed changes
 
 router.route("/:user")
 .get(user.getuser);
@@ -44,7 +53,11 @@ router.post('/send-otp', sendOTP)
     .get(user.getuser)
     router.route("/:id")
     .put(user.updateuser)
+<<<<<<< Updated upstream
     .delete(user.deleteuser);
+>>>>>>> Stashed changes
+=======
+    .delete(user.deleteuser)
 >>>>>>> Stashed changes
 
 
