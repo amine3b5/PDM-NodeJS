@@ -46,25 +46,17 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
 
     },
     adresse: {
-<<<<<<< Updated upstream
+
         type: String,
         required: true
-=======
+
         type: String
->>>>>>> Stashed changes
+
         
 
     },
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-
-=======
->>>>>>> Stashed changes
-  
   
 
    
