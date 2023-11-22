@@ -24,14 +24,13 @@ export  function adduser(req, res) {
       phone: phone,
       password: password,
 
-      image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
+      //image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
 
-    //  image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
 
       wallet: wallet
     }
     
-).catch(error => res.status(500).json({ error }));
+)
 return res.status(200).json({message: "sucess"})
 
 }
@@ -89,7 +88,7 @@ export function updateuser(req, res) {
       phone: req.body.phone,    
       first_name: req.body.first_name,  
       password:  req.body.password,
-      image :`${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+     // image :`${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
     }, {new: true})
     .then((updatedUser)=> {
       if (updatedUser) {
@@ -133,4 +132,4 @@ export async function deleteuser(req, res) {
 
 }
 
-}
+

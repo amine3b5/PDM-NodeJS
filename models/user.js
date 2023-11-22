@@ -36,8 +36,8 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
     },
 
     image:{
-        type:String,
-        required: true
+     type:String,
+        required: false
         
     },
     wallet: {
@@ -50,7 +50,7 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
         type: String,
         required: true
 
-        type: String
+       
 
         
 

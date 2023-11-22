@@ -19,7 +19,7 @@ router.route("/:user")
 .get(user.getuser);
 
 router.route("/:id")
-   .put(multer("image"),user.updateuser)
+  // .put(multer("image"),user.updateuser)
    .delete(user.deleteuser);
 
  /*  //Handlers from controllers
