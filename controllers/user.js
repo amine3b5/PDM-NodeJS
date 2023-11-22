@@ -9,10 +9,9 @@ import { validationResult } from 'express-validator';
 
 export  function adduser(req, res) {
   const {  adresse,email,first_name,last_name,phone,password,wallet} = req.body
-<<<<<<< Updated upstream
+
  console.log(validationResult(req));
-=======
->>>>>>> Stashed changes
+
   if (!validationResult(req).isEmpty()){  // verifiw les condition mte3na 
     res.status(400).json({errors: validationResult(req).array()})
 }else{
@@ -24,11 +23,11 @@ export  function adduser(req, res) {
       last_name: last_name,
       phone: phone,
       password: password,
-<<<<<<< Updated upstream
+
       image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
-=======
+
     //  image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
->>>>>>> Stashed changes
+
       wallet: wallet
     }
     
@@ -132,9 +131,6 @@ export async function deleteuser(req, res) {
     res.status(400).json({ error: error.message });
   }
 
-<<<<<<< Updated upstream
 }
 
-=======
 }
->>>>>>> Stashed changes
