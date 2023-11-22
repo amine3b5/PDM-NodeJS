@@ -1,4 +1,7 @@
-export function notFoundError(req, res, next) {
+
+
+
+ export function notFoundError(req, res, next) {
     const error = new Error('Not Found');
     error.status = 400;
     res.status(error.status).json({
@@ -11,4 +14,4 @@ export function errorHandler(err, req, res, next) {
       message: err.message,
     });
   }
-  
+

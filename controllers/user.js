@@ -7,7 +7,7 @@ import { validationResult } from 'express-validator';
 
 // TODOO 1 Permet d'ajouter un nouveau user
 
-export  function adduser(req, res) {
+export  function adduser(req, res,next) {
  console.log(validationResult(req));
   if (!validationResult(req).isEmpty()){  // verifiw les condition mte3na 
     res.status(400).json({errors: validationResult(req).array()})
@@ -20,7 +20,11 @@ export  function adduser(req, res) {
       last_name: req.body.last_name,
       phone: req.body.phone,
       password: req.body.password,
+<<<<<<< Updated upstream
       image : `${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+=======
+     // image : `${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+>>>>>>> Stashed changes
       wallet: req.body.wallet
     }
 )
@@ -33,7 +37,7 @@ export  function adduser(req, res) {
         last_name: newuser.last_name,
         phone: newuser.phone,
         password: newuser.password,
-        image : `${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+        //image : `${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
         wallet: newuser.wallet,
         adresse: newuser.adresse,
     })
@@ -98,7 +102,11 @@ export function updateuser(req, res) {
       phone: req.body.phone,    
       first_name: req.body.first_name,  
       password:  req.body.password,
+<<<<<<< Updated upstream
       image :`${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+=======
+      //image :`${req.protocol}://${req.get("host")}/image/${req.file.filename}`,
+>>>>>>> Stashed changes
     }, {new: true})
     .then((updatedUser)=> {
       if (updatedUser) {
