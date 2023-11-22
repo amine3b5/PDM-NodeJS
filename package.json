@@ -4,14 +4,13 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-<<<<<<< Updated upstream
+
   "extensions": [
     ".js",
     ".jsx",
     ".mjs"
   ],
-=======
->>>>>>> Stashed changes
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
