@@ -2,8 +2,8 @@ import express, { Router } from 'express';
 import * as user   from '../controllers/user.js';
 
 //import multer from "../middlewares/multer-config.js";
-import { body } from 'express-validator';
-import multer from 'multer';
+//import { body } from 'express-validator';
+//import multer from 'multer';
 
 import { adduser } from '../controllers/user.js';
 
