@@ -1,14 +1,19 @@
 import express, { Router } from 'express';
 import * as user   from '../controllers/user.js';
-import multer from "../middlewares/multer-config.js";
+//import multer from "../middlewares/multer-config.js";
 import { body } from 'express-validator';
+import multer from 'multer';
 
 
 
 const router = express.Router();
 
 router.route("/")
+<<<<<<< Updated upstream
     .post( multer("image"),
+=======
+    .post( 
+>>>>>>> Stashed changes
     body("wallet").isNumeric(),
     body("adresse").isLength({min:5,max:100}),
     body("password").isLength({min:5,max:10}),
@@ -27,10 +32,20 @@ router.route("/:id")
 
  /*  //Handlers from controllers
 
+<<<<<<< Updated upstream
 
 router.post('/login', login)
 router.post('/signup', signup)
 router.post('/send-otp', sendOTP)
+=======
+   // .router.post("/user", upload, adduser);
+   //.put(multer("image"),user.updateuser)
+    router.route("/:user")
+    .get(user.getuser)
+    router.route("/:id")
+    .put(user.updateuser)
+    .delete(user.deleteuser);
+>>>>>>> Stashed changes
 
 
 //testing protected route
