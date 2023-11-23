@@ -1,6 +1,4 @@
-
 import user from "../models/user.js";
-
 import { validationResult } from 'express-validator';
 
 
@@ -8,7 +6,11 @@ import { validationResult } from 'express-validator';
 // TODOO 1 Permet d'ajouter un nouveau 0user
 
 export  function adduser(req, res) {
+<<<<<<< Updated upstream
   const {  adresse,email,first_name,last_name,phone,password,wallet} = req.body
+=======
+  const {  adresse,email,first_name,last_name,phone,password,wallet,role} = req.body
+>>>>>>> Stashed changes
 
  console.log(validationResult(req));
 
@@ -23,6 +25,7 @@ export  function adduser(req, res) {
       last_name: last_name,
       phone: phone,
       password: password,
+<<<<<<< Updated upstream
 
       //image : req.protocol + "://"+ req.get("host") + "/image/" + req.file.filename,
 
@@ -30,6 +33,12 @@ export  function adduser(req, res) {
       wallet: wallet
     }
     
+=======
+      wallet: wallet,
+      role:role,
+      
+    }
+>>>>>>> Stashed changes
 )
 return res.status(200).json({message: "sucess"})
 
@@ -130,6 +139,10 @@ export async function deleteuser(req, res) {
     res.status(400).json({ error: error.message });
   }
 
+<<<<<<< Updated upstream
 }
 
 
+=======
+}
+>>>>>>> Stashed changes

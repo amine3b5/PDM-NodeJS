@@ -22,7 +22,11 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
     },
    
     phone: {
+<<<<<<< Updated upstream
         type: Number,
+=======
+        type:String,
+>>>>>>> Stashed changes
         required: true
       //  
 
@@ -35,19 +39,37 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
 
     },
 
+<<<<<<< Updated upstream
     image:{
      type:String,
         required: false
         
     },
+=======
+    /*image:{
+     type:String,
+        required: false
+      
+    },*/
+>>>>>>> Stashed changes
     wallet: {
+        type: String ,
+        required :false,
+        
+
+    },  
+    
+    role: {
         type: String,
+        required :true,
         
 
     },
+    
     adresse: {
 
         type: String,
+<<<<<<< Updated upstream
         required: true
 
        
@@ -60,6 +82,11 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
   
 
    
+=======
+        required: true 
+
+         },
+>>>>>>> Stashed changes
 },
     {
         timestamp: true

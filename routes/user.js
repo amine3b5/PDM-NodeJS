@@ -54,4 +54,8 @@ router.get("/test",auth, (req,res)=>{
 
 
 */
+<<<<<<< Updated upstream
     export default router;
+=======
+    export default router;
+>>>>>>> Stashed changes
