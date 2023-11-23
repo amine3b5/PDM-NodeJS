@@ -14,7 +14,7 @@ export  function adduser(req, res) {
 
   if (!validationResult(req).isEmpty()){  // verifiw les condition mte3na 
     res.status(400).json({errors: validationResult(req).array()})
-}else{
+}else {
    user.create(
     {
       adresse: adresse,
