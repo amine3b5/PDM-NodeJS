@@ -5,65 +5,76 @@ const UserSchema = new Schema({               // tetbadel  selon el  esm el mode
 //  bech  nda5el les variables eli  fel  diagramme 
     email: {
     type: String,
-    required: true
+    required: false
     //
     },
 
-   first_name: {
+   fullname: {
         type: String,
-        required: true
+        required: false
       //  
     },
 
-    last_name: {
+    id: {
+      type: String,
+      required: false
+    //  
+  },
+
+
+    username: {
         type: String,
-        required: true
+        required: false
       //  
     },
    
     phone: {
         type: Number,
-        required: true
+        required: false
       //  
 
     },
 
     password: {
         type: String,
-        required: true
+        required: false
       //  
 
     },
 
-    image:{
+    /*image:{
      type:String,
         required: false
         
-    },
-    wallet: {
-        type: String,
-        
+    },*/
+    isBanned: {
+      type: Boolean,
+      default: false,
+  },
+  banExpirationDate: {
+      type: Date,
+      default: null,
+  },
+  isBannedTemp: {
+      type: Boolean,
+      default: false,
+  },
+  lastLoginTimestamp: Date,
+  lastLogoutTimestamp: Date,
+  lastActive: Date,
+  totalTimeSpent: {
+      type: Number,
+      default: 0, // Temps en millisecondes ou en secondes
+  },
 
-    },
-    adresse: {
 
-        type: String,
-        required: true
-
-       
-
-        
-
-    },
-
-
-  
-
-   
 },
+
+
     {
         timestamp: true
     }
 );
 
-export default mongoose.model('user', UserSchema);
+export default mongoose.model('User', UserSchema);
+
