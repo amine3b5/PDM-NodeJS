@@ -40,7 +40,8 @@ router.route("/:id")
     router.route("/resetPassword")
     .post( adduser )
 
-   
+    router.route("/logout")
+     .post ( User.logout);
 
 
     export default router;

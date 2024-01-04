@@ -7,17 +7,17 @@ import { body } from 'express-validator';
 const router = express.Router();
 
 // Routes pour le bannissement d'utilisateur
-router.put('/:email/ban',
+router.put('/:id/ban',
   [
     // Ajoutez les validateurs express si nécessaires
-   // body('durationInMinutes').isInt().withMessage('La durée doit être un nombre entier positif'),
+   body('durationInMinutes').isInt().withMessage('La durée doit être un nombre entier positif'),
   ],
   banUser
 );
 
 router.get('/getBannedUsers',getBannedUsers)
 
-router.put('/:email/unban', unbanUser);
+router.put('/:id/unban', unbanUser);
 
 router.put(
   '/:email/banWithDuration',

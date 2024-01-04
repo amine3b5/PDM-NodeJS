@@ -4,16 +4,16 @@ import User from '../models/user.js';
 import mongoose from 'mongoose';
 
 export async function banUser(req, res) {
-    const email = req.params.email; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à bannir
+    const id = req.params.id; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à bannir
     console.log("aaa");
-    if (!mongoose.Types.ObjectId.isValid(email)) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
 
      
       return res.status(400).json({ message: 'Invalid user ID' });
   }
     try {
       // Recherchez l'utilisateur dans la base de données
-      const user = await User.findById(email);
+      const user = await User.findById(id);
   
       if (!user) {
         return res.status(404).json({ message: 'Utilisateur introuvable' });
@@ -22,7 +22,7 @@ export async function banUser(req, res) {
       // Vérifiez si l'utilisateur est déjà banni
       if (user.isBanned) {
 
-        return res.status(400).json({ message: 'Utilisateur déjà banni' });
+        return res.status(401).json({ message: 'Utilisateur déjà banni' });
       }
   
       // Marquez l'utilisateur comme banni
@@ -39,7 +39,7 @@ export async function banUser(req, res) {
   }
 
   export async function unbanUser(req, res) {
-    const id = req.params.email; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à débannir
+    const id = req.params.id; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à débannir
   
     try {
       // Recherchez l'utilisateur dans la base de données
@@ -70,12 +70,12 @@ export async function banUser(req, res) {
 
   // Fonction pour bannir un utilisateur pour une durée définie
 export async function banUserWithDuration(req, res) {
-    const email = req.params.email; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à bannir
+    const id = req.params.id; // ou tout autre moyen d'obtenir l'ID de l'utilisateur à bannir
     const banDurationInMinutes = req.body.durationInMinutes; // La durée du bannissement en minutes
   
     try {
       // Recherchez l'utilisateur dans la base de données
-      const user = await User.findById(email);
+      const user = await User.findById(id);
   
       if (!user) {
         return res.status(404).json({ message: 'Utilisateur introuvable' });

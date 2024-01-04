@@ -190,6 +190,24 @@ console.log(user)
     });
 }
 
+export  function logout (req, res)  {
+  // Vous pouvez récupérer le jeton depuis les cookies ou les en-têtes
+  const token = req.cookies.jwt;
+  console.log(req.token)
+  // Si le jeton n'est pas présent, l'utilisateur est déjà déconnecté
+  if (!token) {
+    return res.status(401).json({ message: 'User already logged out' });
+  }
+
+  // Blacklist ou d'autres opérations de votre choix peuvent être effectuées ici
+
+  // Supprimer le cookie
+  res.clearCookie('jwt');
+
+  // Répondre avec succès
+  res.status(200).json({ message: 'User successfully logged out' });
+};
+
 export async function sendOTP(req,res,next){
   try {
     const existingUser = await User.findOne(
